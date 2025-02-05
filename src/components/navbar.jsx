@@ -1,29 +1,15 @@
 import React from "react";
 import Button from "./button";
+import NavButton from "./navButton";
 
 export default function Navbar() {
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <div className="bg-slate-200 mx-10 my-10 px-5 py-5 rounded-lg top-1 sticky">
-      <div className="flex justify-around items-center">
-        <Button
-          buttonName="Profile"
-          onClick={() => scrollToSection("profile")}
-        />
-        <Button
-          buttonName="Projects"
-          onClick={() => scrollToSection("projects")}
-        />
-        <Button
-          buttonName="Social Media"
-          onClick={() => scrollToSection("footer")}
-        />
+    <div className="bg-gray-800 py-5 px-10 shadow-md sticky top-0 z-50">
+      <div className="flex justify-center gap-10">
+        <NavButton section="profile" label="Profile" />
+        <NavButton section="techstack" label="Tech Stack" />
+        <NavButton section="projects" label="Projects" />
+        <NavButton section="footer" label="Social Media" />
       </div>
     </div>
   );

@@ -1,89 +1,127 @@
 import React from "react";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+} from "react-icons/fa";
+import { SiVercel, SiTailwindcss } from "react-icons/si";
 import Navbar from "../components/navbar";
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import ProjectCard from "../components/projectCard";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-gray-900 text-white min-h-screen">
       {/* NAVBAR */}
       <Navbar />
+
       {/* PROFILE SECTION */}
-      <div className="bg-lime-50 flex justify-evenly items-center" id="profile">
+      <div
+        className="bg-gray-800 md:flex justify-evenly items-center py-20 px-10"
+        id="profile"
+      >
         <div className="text-2xl w-1/2">
-          Halo, nama saya{" "}
-          <span className="font-bold">Nurhadi Ghifari Ramadhan</span>. Saya
-          seorang <span className="font-bold">Fresh Graduate</span> dan
-          mempunyai ahli di bidang{" "}
-          <span className="font-bold">Front-End Web Development</span>.
+          <p className="text-gray-300">Halo, nama saya</p>
+          <span className="font-bold text-4xl text-white">
+            Nurhadi Ghifari Ramadhan
+          </span>
+          <p className="text-gray-300 text-lg mt-2">
+            Saya seorang{" "}
+            <span className="font-bold text-white">Fresh Graduate</span> yang
+            mempunyai keahlian di bidang{" "}
+            <span className="font-bold text-white">
+              Front-End Web Development
+            </span>
+            .
+          </p>
         </div>
         <div className="py-3">
           <img
             src="/pp1.jpg"
             alt="foto porto"
-            className="rounded-lg w-[25rem]"
+            className="rounded-lg w-[25rem] border-4 border-gray-700"
           />
         </div>
       </div>
+
+      {/* TECH STACK SECTION */}
+      <div className="bg-gray-700 py-20 text-center" id="techstack">
+        <h1 className="text-3xl font-bold mb-5">Tech Stack</h1>
+        <div className="flex justify-center gap-10 text-5xl">
+          <FaHtml5 className="text-orange-500" />
+          <FaCss3Alt className="text-blue-500" />
+          <FaJs className="text-yellow-400" />
+          <FaReact className="text-blue-300" />
+          <SiTailwindcss className="text-teal-400" />
+          <SiVercel className="text-white" />
+        </div>
+      </div>
+
       {/* PROJECT SECTION */}
-      <div className="bg-lime-100 grid grid-cols-3 pt-10" id="projects">
-        <div className="mx-5 bg-white w-[30rem] drop-shadow-md rounded-md">
-          <video controls className="w-[27rem] rounded-md m-auto pt-3">
-            <source src="sr-gr-bca.mp4" type="video/mp4" />
-            Your browser does not support the video tag
-          </video>
-          <p className="font-bold py-3 text-center">
-            BCA Ashique Fest 2024 "EDC dufan ceria", Web undian Dooprize dan
-            Grandprize
-          </p>
-        </div>
-        <h1 className="text-black text-center font-extrabold text-3xl pt-5">
-          MY PROJECT
+      <div className="bg-gray-800 grid md:grid-cols-3 gap-5 p-10" id="projects">
+        <h1 className="text-white text-center font-extrabold text-3xl col-span-3">
+          MY PROJECTS
         </h1>
-        <a
-          className=" bg-white w-[28rem] drop-shadow-md rounded-md hover:drop-shadow-2xl transition-all"
-          href="https://propertease-two.vercel.app/"
-        >
-          <img
-            src="ss-propertease.jpg"
-            alt="pp"
-            className="w-[27rem] m-auto pt-3"
-          />
-          <p className="font-bold py-3 text-center ">
-            PROPERTEASE, Marketplace Properti berbasis web
-          </p>
-        </a>
-        <a
-          className="mx-5 bg-white w-[30rem] drop-shadow-md rounded-md my-3 hover:drop-shadow-2xl transition-all"
-          href="https://frontend-disappear.vercel.app/"
-        >
-          <img
-            src="ss-disappear.jpg"
-            alt=""
-            className="w-[27rem] m-auto pt-3"
-          />
-          <p className="font-bold py-3 text-center ">
-            DISAPPEAR, Capstone Project Alterra Academy
-          </p>
-        </a>
+        <ProjectCard
+          videoSrc="sr-gr-bca.mp4"
+          title="BCA Ashique Fest 2024 - Web Undian"
+        />
+        <ProjectCard
+          imgSrc="ss-propertease.jpg"
+          title="PROPERTEASE - Marketplace Properti"
+          link="https://propertease-two.vercel.app/"
+        />
+        <ProjectCard
+          imgSrc="ss-disappear.jpg"
+          title="DISAPPEAR - Capstone Project Alterra Academy (Landing Page dan Admin)"
+          link="https://frontend-disappear.vercel.app/"
+        />
+        <ProjectCard
+          imgSrc="ss-siap-lapor.jpg"
+          title="SIAPLAPOR! - Mini Project Alterra Academy"
+          link="https://mini-project-siaplapor.vercel.app/"
+        />
+        <ProjectCard
+          imgSrc="ss-pkumi.jpg"
+          title="PKUMI"
+          link="https://grandprize-admin.my.id/"
+        />
+        <ProjectCard
+          imgSrc="ss-lapor-yuks.jpg"
+          title="Lapor Yuks - Admin Lapor Yuks"
+          link="/"
+        />
+        <ProjectCard
+          imgSrc="ss-equalitech.jpg"
+          title="Equalitech - Capstone Project Dicoding Indonesia"
+          link="https://equaliteach.netlify.app/"
+        />
+        <ProjectCard
+          imgSrc="ss-movie-catalogue.jpg"
+          title="Movie Catalogue"
+          link="https://meek-biscuit-c944fb.netlify.app/"
+        />
       </div>
+
       {/* FOOTER SECTION */}
       <footer
-        className="bg-white flex items-center justify-center gap-5 py-10"
+        className="bg-gray-900 flex items-center justify-center gap-5 py-10 border-t border-gray-700"
         id="footer"
       >
         <a
           href="https://www.linkedin.com/in/nurhadi-ghifari-ramadhan-27b507207/"
-          className="drop-shadow-md hover:drop-shadow-xl"
+          className="text-blue-500 hover:text-blue-400"
         >
-          <FaLinkedin className="text-3xl drop-shadow-md hover:drop-shadow-xl" />
+          <FaLinkedin className="text-3xl" />
         </a>
         <a
           href="https://www.instagram.com/nurhadighifari/"
-          className="flex items-center"
+          className="flex items-center text-pink-500 hover:text-pink-400"
         >
           <FaInstagram className="text-3xl" />
-          <p className="font-bold">@nurhadighifari</p>
+          <p className="font-bold ml-2">@nurhadighifari</p>
         </a>
       </footer>
     </div>
