@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ProjectCard({ videoSrc, imgSrc, title, link }) {
   return (
-    <div className="bg-gray-900 w-[30rem] p-5 rounded-lg shadow-md hover:shadow-lg transition">
+    <div className="bg-gray-900 md:w-[30rem] p-5 rounded-lg shadow-md hover:shadow-lg transition">
       {videoSrc ? (
         <video controls className="w-full rounded-lg">
           <source src={videoSrc} type="video/mp4" />

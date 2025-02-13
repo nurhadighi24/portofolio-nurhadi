@@ -60,7 +60,10 @@ export default function Home() {
       </div>
 
       {/* PROJECT SECTION */}
-      <div className="bg-gray-800 grid md:grid-cols-3 gap-5 p-10" id="projects">
+      <div
+        className="bg-gray-800 md:grid md:grid-cols-3 gap-5 md:p-10 p-5"
+        id="projects"
+      >
         <h1 className="text-white text-center font-extrabold text-3xl col-span-3">
           MY PROJECTS
         </h1>
